@@ -85,7 +85,7 @@ registerProductTools(server);
 registerOrderTools(server);
 // ...
 
-// One line — branded UI for all 14 element types
+// One line — branded UI for all element types
 await registerBranderTools(server, {
   projectId: process.env.BRANDER_PROJECT_ID!,
   betaKey: process.env.BRANDER_BETA_KEY!,
