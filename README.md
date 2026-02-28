@@ -45,7 +45,7 @@ Then restart Claude Desktop.
 |---|---|---|
 | `BRANDER_PROJECT_ID` | Yes | Your BranderUX project ID |
 | `BRANDER_BETA_KEY` | Yes | Design partner key (`bux_dp_...`) |
-| `BRANDER_API_BASE_URL` | No | API URL (defaults to `https://app.branderux.com`) |
+| `BRANDER_API_BASE_URL` | No | API URL (defaults to `https://branderux.com`) |
 
 ## Tools
 
