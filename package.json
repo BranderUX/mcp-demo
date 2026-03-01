@@ -2,7 +2,7 @@
   "name": "brander-mcp-demo",
   "version": "0.1.0",
   "type": "module",
-  "description": "TechStore Pro — BranderUX MCP integration reference implementation",
+  "description": "BranderUX Demo — Explore BranderUX capabilities through branded UI",
   "scripts": {
     "build": "tsc",
     "dev": "tsx --watch src/index.ts",

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * TechStore Pro — BranderUX MCP Integration Demo
+ * BranderUX Demo — MCP Integration Showcase
  *
- * This is a reference implementation showing exactly how a customer would add
- * BranderUX branded UI rendering to their own MCP server.
+ * This demo showcases BranderUX's capabilities by using BranderUX itself.
+ * It provides tools to explore components, integration methods, AI capabilities,
+ * example scenarios, and platform analytics — all rendered with branded UI.
  *
  * Integration pattern:
  *   1. Create an McpServer
@@ -15,7 +16,7 @@
  * Claude Desktop config:
  * {
  *   "mcpServers": {
- *     "techstore-pro": {
+ *     "branderux-demo": {
  *       "command": "node",
  *       "args": ["/path/to/brander-mcp-demo/dist/index.js"],
  *       "env": {
@@ -30,21 +31,21 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { registerBranderTools } from "@brander/mcp-tools";
-import { registerProductTools } from "./tools/product-tools.js";
-import { registerOrderTools } from "./tools/order-tools.js";
-import { registerCustomerTools } from "./tools/customer-tools.js";
-import { registerAnalyticsTools } from "./tools/analytics-tools.js";
+import { registerComponentTools } from "./tools/component-tools.js";
+import { registerScenarioTools } from "./tools/scenario-tools.js";
+import { registerCapabilityTools } from "./tools/capability-tools.js";
+import { registerPlatformTools } from "./tools/platform-tools.js";
 
 const server = new McpServer({
-  name: "techstore-pro",
+  name: "branderux-demo",
   version: "1.0.0",
 });
 
-// ─── TechStore Pro business tools ────────────────────────────────────────────
-registerProductTools(server); // search_products, get_product_details
-registerOrderTools(server); // get_orders, get_order_details
-registerCustomerTools(server); // get_customers, get_customer_profile
-registerAnalyticsTools(server); // get_analytics_summary, get_inventory_status
+// ─── BranderUX Demo tools ───────────────────────────────────────────────────
+registerComponentTools(server);   // browse_components, get_component_details
+registerScenarioTools(server);    // browse_scenarios, get_scenario_details
+registerCapabilityTools(server);  // get_integration_guide, explore_ai_capabilities
+registerPlatformTools(server);    // get_platform_analytics, get_feature_overview
 
 // ─── BranderUX: one-liner adds branded UI rendering to all 14 element types ──
 await registerBranderTools(server, {
