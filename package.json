@@ -1,5 +1,5 @@
 {
-  "name": "brander-mcp-demo",
+  "name": "@brander/mcp-demo",
   "version": "0.1.0",
   "type": "module",
   "description": "BranderUX Demo — Explore BranderUX capabilities through branded UI",
