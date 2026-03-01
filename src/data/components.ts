@@ -294,6 +294,26 @@ export const COMPONENTS: BranderComponent[] = [
     status: "stable",
   },
 
+  {
+    id: "comp-video",
+    name: "VideoPlayer",
+    elementType: "video",
+    category: "Content & Media",
+    description:
+      "Embedded video player supporting YouTube URLs and direct mp4/webm files. Configurable aspect ratios (16:9, 4:3, 1:1), optional autoplay, and a Discuss button that sends an AI query about the video content.",
+    popularityScore: 68,
+    usageCount: 8200,
+    props: ["id", "src", "title", "description", "action", "aspectRatio", "autoplay"],
+    useCases: [
+      "Product demo videos",
+      "Tutorial and onboarding content",
+      "Marketing campaign previews",
+    ],
+    bestFor: ["tutorials", "demos", "media-rich"],
+    exampleQuery: "Show me the product demo video",
+    status: "new",
+  },
+
   // --- Coming Soon ---
   {
     id: "comp-custom",

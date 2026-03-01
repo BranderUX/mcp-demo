@@ -8,7 +8,7 @@ export function registerComponentTools(server: McpServer): void {
     "browse_components",
     {
       description:
-        "Browse BranderUX's 14 built-in UI component types (plus Custom Elements coming soon). " +
+        "Browse BranderUX's 15 built-in UI component types (plus Custom Elements coming soon). " +
         "Filter by category, status, or search by name. Returns component cards with popularity, " +
         "usage stats, and example queries. " +
         "After getting results, use generate_screen with item_grid element type to display components " +
