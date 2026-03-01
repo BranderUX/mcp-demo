@@ -311,7 +311,7 @@ export const COMPONENTS: BranderComponent[] = [
     ],
     bestFor: ["tutorials", "demos", "media-rich"],
     exampleQuery: "Show me the product demo video",
-    status: "new",
+    status: "stable",
   },
 
   // --- Coming Soon ---
