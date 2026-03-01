@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "type": "module",
   "description": "BranderUX Demo — Explore BranderUX capabilities through branded UI",
+  "bin": {
+    "brander-mcp-demo": "dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "mcp",
+    "branderux",
+    "claude",
+    "chatgpt",
+    "ai",
+    "branded-ui",
+    "model-context-protocol"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx --watch src/index.ts",
