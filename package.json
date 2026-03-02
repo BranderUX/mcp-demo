@@ -24,7 +24,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@brander/mcp-tools": "^0.2.7",
+    "@brander/mcp-tools": "^0.2.8",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^4.3.6"
   },
