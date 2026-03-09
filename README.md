@@ -1,33 +1,27 @@
-# TechStore Pro — BranderUX MCP Demo
+# @brander/mcp-demo
 
-A reference implementation showing how to add [BranderUX](https://branderux.com) branded UI rendering to an MCP server using [`@brander/mcp-tools`](https://www.npmjs.com/package/@brander/mcp-tools).
+A demo MCP server showcasing [BranderUX](https://branderux.com) branded UI rendering inside AI chatbots. Uses [`@brander/mcp-tools`](https://www.npmjs.com/package/@brander/mcp-tools) to render interactive, branded UI components directly in conversations on Claude, ChatGPT, and other MCP-compatible hosts.
 
-This demo creates a fake B2B e-commerce company (TechStore Pro) with 8 business tools that Claude can use to search products, view orders, analyze customers, and display analytics — all rendered as branded, interactive UI inside Claude Desktop.
+## Connect
 
-## Setup
+### Claude.ai / ChatGPT (Remote)
 
-```bash
-# Clone the repo
-git clone https://github.com/BranderUX/mcp-demo.git
-cd mcp-demo
+Use the hosted URL — no installation needed:
 
-# Install dependencies
-npm install
-
-# Build
-npm run build
+```
+https://mcp-demo.branderux.com/mcp
 ```
 
-## Configure Claude Desktop
+### Claude Desktop (Local)
 
-Add this to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Add to your config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
   "mcpServers": {
-    "techstore-pro": {
-      "command": "node",
-      "args": ["/absolute/path/to/mcp-demo/dist/index.js"],
+    "branderux-demo": {
+      "command": "npx",
+      "args": ["-y", "@brander/mcp-demo"],
       "env": {
         "BRANDER_PROJECT_ID": "your_project_id",
         "BRANDER_BETA_KEY": "bux_dp_your_key"
@@ -37,7 +31,58 @@ Add this to your Claude Desktop config (`~/Library/Application Support/Claude/cl
 }
 ```
 
-Then restart Claude Desktop.
+## Tools
+
+| Tool | Description |
+|---|---|
+| `generate_screen` | Render branded UI screens (charts, tables, grids, forms, cards, etc.) |
+| `browse_components` | Browse available BranderUX UI components |
+| `get_component_details` | View details of a specific component |
+| `browse_scenarios` | Explore demo business scenarios |
+| `get_scenario_details` | View a specific scenario with sample data |
+| `get_platform_analytics` | View platform analytics and metrics |
+| `get_feature_overview` | Explore BranderUX platform features |
+| `get_integration_guide` | Get integration guides for different frameworks |
+| `explore_ai_capabilities` | Explore AI-powered UI generation capabilities |
+
+## Try It
+
+Connect to the demo and try these prompts:
+
+- "Show me a sales dashboard with analytics"
+- "Create a product catalog with items and pricing"
+- "Display a customer data table"
+- "Show a login form with email and password"
+- "Create a stats overview with revenue metrics"
+
+## How It Works
+
+BranderUX uses the [MCP Apps](https://modelcontextprotocol.io/docs/extensions/apps) standard to render interactive UI inside AI conversations. When the AI calls `generate_screen`, it returns:
+
+1. **Text summary** — for the AI to understand what was rendered
+2. **Structured content** — element data (charts, tables, forms, etc.)
+3. **HTML resource** — a bundled React app that renders the branded UI in a sandboxed iframe
+
+All UI is styled with your project's brand colors, fonts, and layout — configured in the BranderUX dashboard.
+
+## Integration Pattern
+
+Adding BranderUX to any MCP server is one line:
+
+```typescript
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { registerBranderTools } from "@brander/mcp-tools";
+
+const server = new McpServer({ name: "my-server", version: "1.0.0" });
+
+// Add your own tools...
+
+// One line — branded UI rendering for 15 element types
+await registerBranderTools(server, {
+  projectId: process.env.BRANDER_PROJECT_ID!,
+  betaKey: process.env.BRANDER_BETA_KEY!,
+});
+```
 
 ## Environment Variables
 
@@ -46,66 +91,6 @@ Then restart Claude Desktop.
 | `BRANDER_PROJECT_ID` | Yes | Your BranderUX project ID |
 | `BRANDER_BETA_KEY` | Yes | Design partner key (`bux_dp_...`) |
 | `BRANDER_API_BASE_URL` | No | API URL (defaults to `https://branderux.com`) |
-
-## Tools
-
-| Tool | Description | Renders As |
-|---|---|---|
-| `search_products` | Search product catalog by name, category, price | Item Grid + Stats Grid |
-| `get_product_details` | View full product details by ID | Header + Details Data + Alert |
-| `get_orders` | List orders with filters (status, customer, date) | Data Table |
-| `get_order_details` | View single order details | Header + Details Data |
-| `get_customers` | Search customers by name, segment, tier | Data Table |
-| `get_customer_profile` | View customer profile with order history | Header + Details Data + Line Chart |
-| `get_analytics_summary` | Revenue, orders, and trend analytics | Header + Stats Grid + Line Chart + Pie Chart |
-| `get_inventory_status` | Stock levels with low-stock alerts | Data Table + Alert |
-
-## Try It
-
-Once configured, try these prompts in Claude Desktop:
-
-- "Show me all laptops under $2000"
-- "What are the latest orders?"
-- "Show me the analytics dashboard"
-- "Which products are low on stock?"
-- "Show me customer John's profile"
-
-## Integration Pattern
-
-The entire BranderUX integration is **one line** in [`src/index.ts`](src/index.ts):
-
-```typescript
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { registerBranderTools } from "@brander/mcp-tools";
-
-const server = new McpServer({ name: "techstore-pro", version: "1.0.0" });
-
-// Your business tools
-registerProductTools(server);
-registerOrderTools(server);
-// ...
-
-// One line — branded UI for all element types
-await registerBranderTools(server, {
-  projectId: process.env.BRANDER_PROJECT_ID!,
-  betaKey: process.env.BRANDER_BETA_KEY!,
-});
-
-await server.connect(new StdioServerTransport());
-```
-
-## Development
-
-```bash
-# Watch mode (auto-restarts on changes)
-npm run dev
-
-# Build for production
-npm run build
-
-# Run built server
-npm start
-```
 
 ## License
 
