@@ -1,21 +1,23 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerBranderTools } from "@brander/mcp-tools";
-import { registerComponentTools } from "./tools/component-tools.js";
-import { registerScenarioTools } from "./tools/scenario-tools.js";
-import { registerCapabilityTools } from "./tools/capability-tools.js";
-import { registerPlatformTools } from "./tools/platform-tools.js";
+import { registerPlatformOverviewTool } from "./tools/platform-overview.js";
+import { registerElementShowcaseTool } from "./tools/element-showcase.js";
+import { registerDemoScenarioTool } from "./tools/demo-scenarios.js";
+import { registerIntegrationGuideTool } from "./tools/integration-guide.js";
 
 export async function createServer(): Promise<McpServer> {
   const server = new McpServer({
     name: "branderux-demo",
-    version: "1.0.0",
+    version: "2.0.0",
   });
 
-  registerComponentTools(server);
-  registerScenarioTools(server);
-  registerCapabilityTools(server);
-  registerPlatformTools(server);
+  // Demo knowledge tools (4 tools)
+  registerPlatformOverviewTool(server);
+  registerElementShowcaseTool(server);
+  registerDemoScenarioTool(server);
+  registerIntegrationGuideTool(server);
 
+  // BranderUX rendering engine (generate_screen tool)
   await registerBranderTools(server, {
     projectId: process.env.BRANDER_PROJECT_ID!,
     betaKey: process.env.BRANDER_BETA_KEY!,
