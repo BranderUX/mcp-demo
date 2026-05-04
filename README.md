@@ -1,6 +1,6 @@
 # @brander/mcp-demo
 
-A demo MCP server showcasing [BranderUX](https://branderux.com) branded UI rendering inside AI chatbots. Uses [`@brander/mcp-tools`](https://www.npmjs.com/package/@brander/mcp-tools) to render interactive, branded UI components directly in conversations on Claude, ChatGPT, and other MCP-compatible hosts.
+A demo MCP server showcasing [BranderUX](https://branderux.com) — branded, interactive UI rendering inside AI chatbots. Uses [`@brander/mcp-tools`](https://www.npmjs.com/package/@brander/mcp-tools) to render rich UI components directly in conversations on Claude, ChatGPT, and other MCP-compatible hosts.
 
 ## Connect
 
@@ -35,35 +35,43 @@ Add to your config (`~/Library/Application Support/Claude/claude_desktop_config.
 
 | Tool | Description |
 |---|---|
-| `generate_screen` | Render branded UI screens (charts, tables, grids, forms, cards, etc.) |
-| `browse_components` | Browse available BranderUX UI components |
-| `get_component_details` | View details of a specific component |
-| `browse_scenarios` | Explore demo business scenarios |
-| `get_scenario_details` | View a specific scenario with sample data |
-| `get_platform_analytics` | View platform analytics and metrics |
-| `get_feature_overview` | Explore BranderUX platform features |
-| `get_integration_guide` | Get integration guides for different frameworks |
-| `explore_ai_capabilities` | Explore AI-powered UI generation capabilities |
+| `generate_screen` | Render branded UI screens with 15 element types (charts, tables, grids, forms, cards, etc.) |
+| `learn_about_branderux` | Learn about BranderUX — platform overview, integration methods, UI generation modes, AI features, no-code philosophy |
+| `explore_elements` | Browse all 15 element types with descriptions, use cases, and sample data ready for `generate_screen` |
+| `get_demo_scenario` | Get pre-built multi-element screen compositions (dashboards, catalogs, reports, showcases) |
+| `get_integration_guide` | Step-by-step integration guides with real code examples for SDK, MCP Tools, and Embed methods |
 
 ## Try It
 
 Connect to the demo and try these prompts:
 
-- "Show me a sales dashboard with analytics"
+- "What is BranderUX?"
+- "Show me all available elements"
+- "Show me a sales dashboard"
 - "Create a product catalog with items and pricing"
-- "Display a customer data table"
-- "Show a login form with email and password"
-- "Create a stats overview with revenue metrics"
+- "How do I integrate BranderUX into my app?"
+- "Show me an analytics report with charts"
+
+## Demo Scenarios
+
+| Scenario | Description |
+|---|---|
+| `sales-dashboard` | Revenue metrics, trend charts, and transaction tables |
+| `product-catalog` | Item grid with categories and pricing |
+| `analytics-report` | Multi-chart report with KPIs |
+| `branderux-overview` | BranderUX capabilities rendered in its own elements |
+| `element-showcase` | All 15 element types displayed as a product catalog |
+| `integration-comparison` | SDK vs MCP vs Embed side-by-side comparison |
 
 ## How It Works
 
-BranderUX uses the [MCP Apps](https://modelcontextprotocol.io/docs/extensions/apps) standard to render interactive UI inside AI conversations. When the AI calls `generate_screen`, it returns:
+BranderUX uses the [MCP Apps](https://modelcontextprotocol.io/docs/extensions/apps) extension to render interactive UI inside AI conversations. When the AI calls `generate_screen`, it returns:
 
 1. **Text summary** — for the AI to understand what was rendered
 2. **Structured content** — element data (charts, tables, forms, etc.)
 3. **HTML resource** — a bundled React app that renders the branded UI in a sandboxed iframe
 
-All UI is styled with your project's brand colors, fonts, and layout — configured in the BranderUX dashboard.
+All UI is styled with your project's brand colors, fonts, and layout — configured in the [BranderUX dashboard](https://branderux.com). No developers needed — AI agents handle the design, PMs control everything through the UI.
 
 ## Integration Pattern
 
