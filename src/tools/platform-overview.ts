@@ -7,8 +7,9 @@ export function registerPlatformOverviewTool(server: McpServer): void {
     "learn_about_branderux",
     {
       description:
-        "Get a comprehensive overview of the BranderUX platform — the AI-UX middleware that transforms " +
-        "AI responses into branded, interactive UI. Returns the product description, value proposition, " +
+        "Get a comprehensive overview of the BranderUX platform — the AI-UX infrastructure that turns " +
+        "your agent into full agentic applications, websites and MCP apps, with branded interactive " +
+        "screens generated at runtime. Returns the product description, value proposition, " +
         "integration methods (SDK, MCP Tools, Embed), UI generation modes (Fixed Screens, A2UI, MCP App), " +
         "AI features (streaming, click-to-query, multi-provider), and no-code capabilities. " +
         "Call this first to understand what BranderUX is before demonstrating elements.",

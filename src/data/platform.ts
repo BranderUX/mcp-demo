@@ -43,18 +43,19 @@ export interface NoCodeInfo {
 
 export const PLATFORM: PlatformInfo = {
   name: "BranderUX",
-  tagline: "AI-UX middleware — transforms AI responses into branded, interactive UI",
+  tagline: "AI-UX infrastructure — turn your agent into full agentic applications, websites and MCP apps, in minutes",
   description:
-    "BranderUX is an AI-UX middleware platform that sits between your AI provider and your users. " +
-    "Instead of plain text responses, your AI generates branded, interactive UI components — " +
-    "dashboards, charts, tables, forms, catalogs — all styled with your brand's colors, fonts, and layout. " +
-    "Every element is clickable: users drill deeper by clicking, not typing. " +
-    "Works with Claude, GPT, and Gemini. No developer required — PMs configure everything through the dashboard.",
+    "BranderUX is an AI-UX infrastructure platform. It turns the agent a company already has into full " +
+    "agentic applications, websites and MCP apps, in minutes. App builders generate an app once — the same " +
+    "artifact for everyone; a BranderUX application is generated at runtime: every answer renders branded, " +
+    "interactive screens — dashboards, charts, tables, forms, catalogs — per user, per question, from " +
+    "certified branded elements or custom elements created in Vibe Studio. Every element is clickable: " +
+    "every click becomes the next question. Works with any agent — Claude, GPT, and Gemini adapters built in.",
   website: "https://branderux.com",
   valueProposition: [
-    "Transforms plain-text AI responses into branded visual UI (dashboards, charts, tables, forms, catalogs)",
-    "15 built-in element types — from KPI stats grids to interactive data tables to forms",
-    "Every element is interactive — click to drill deeper, zero typing needed",
+    "Turns your agent into full agentic applications, websites and MCP apps — branded screens generated at runtime, per user, per question",
+    "15 certified branded element types — plus custom elements your team creates in Vibe Studio",
+    "Every element is interactive — every click becomes the next question, zero typing needed",
     "Works with Claude, GPT, and Gemini — switch providers without changing UI code",
     "PM controls everything through the dashboard — no developer required for configuration",
     "AI generates brand settings, screen layouts, and element configurations from natural language",

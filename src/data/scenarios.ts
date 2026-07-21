@@ -171,7 +171,7 @@ export const SCENARIOS: DemoScenario[] = [
     screenElements: [
       {
         elementType: "header",
-        props: { title: "BranderUX Platform", subtitle: "AI-UX middleware — branded interactive UI for AI responses" },
+        props: { title: "BranderUX Platform", subtitle: "AI-UX infrastructure — agentic applications generated at runtime" },
       },
       {
         elementType: "stats-grid",

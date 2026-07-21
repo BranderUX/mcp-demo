@@ -287,7 +287,7 @@ export const ELEMENTS: ElementDefinition[] = [
         id: "demo-video",
         src: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         title: "BranderUX Platform Demo",
-        description: "See how BranderUX transforms AI responses into branded interactive UI",
+        description: "See how BranderUX turns your agent into a full branded agentic application",
       },
     },
   },
