@@ -24,7 +24,7 @@ Add to your config (`~/Library/Application Support/Claude/claude_desktop_config.
       "args": ["-y", "@brander/mcp-demo"],
       "env": {
         "BRANDER_PROJECT_ID": "your_project_id",
-        "BRANDER_BETA_KEY": "bux_dp_your_key"
+        "BRANDER_API_KEY": "bux_pk_your_key"
       }
     }
   }
@@ -88,7 +88,7 @@ const server = new McpServer({ name: "my-server", version: "1.0.0" });
 // One line — branded UI rendering for 15 element types
 await registerBranderTools(server, {
   projectId: process.env.BRANDER_PROJECT_ID!,
-  betaKey: process.env.BRANDER_BETA_KEY!,
+  apiKey: process.env.BRANDER_API_KEY!,
 });
 ```
 
@@ -97,8 +97,7 @@ await registerBranderTools(server, {
 | Variable | Required | Description |
 |---|---|---|
 | `BRANDER_PROJECT_ID` | Yes | Your BranderUX project ID |
-| `BRANDER_BETA_KEY` | Yes | Design partner key (`bux_dp_...`) |
-| `BRANDER_API_BASE_URL` | No | API URL (defaults to `https://branderux.com`) |
+| `BRANDER_API_KEY` | Yes | Project API key (`bux_pk_...`) — generate under Projects → API Keys. Legacy `BRANDER_BETA_KEY` (`bux_dp_...`) still works as a fallback. |
 
 ## License
 

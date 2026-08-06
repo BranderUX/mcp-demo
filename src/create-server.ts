@@ -20,8 +20,10 @@ export async function createServer(): Promise<McpServer> {
   // BranderUX rendering engine (generate_screen tool)
   await registerBranderTools(server, {
     projectId: process.env.BRANDER_PROJECT_ID!,
-    betaKey: process.env.BRANDER_BETA_KEY!,
-    ...(process.env.BRANDER_API_BASE_URL && { apiBaseUrl: process.env.BRANDER_API_BASE_URL }),
+    // BRANDER_API_KEY is the per-project bux_pk_ key; BRANDER_BETA_KEY kept as a
+    // fallback so existing Claude Desktop configs keep working until updated.
+    // (BRANDER_API_BASE_URL is read by mcp-tools itself — team-internal override.)
+    apiKey: (process.env.BRANDER_API_KEY ?? process.env.BRANDER_BETA_KEY)!,
   });
 
   return server;

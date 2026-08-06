@@ -13,7 +13,7 @@
  *       "args": ["/path/to/brander-mcp-demo/dist/index.js"],
  *       "env": {
  *         "BRANDER_PROJECT_ID": "your_project_id",
- *         "BRANDER_BETA_KEY": "bux_dp_your_key"
+ *         "BRANDER_API_KEY": "bux_pk_your_key"
  *       }
  *     }
  *   }

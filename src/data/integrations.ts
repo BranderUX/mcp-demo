@@ -84,7 +84,7 @@ export const INTEGRATION_METHODS: IntegrationMethod[] = [
       { step: 1, title: "Install the package", command: "npm install @brander/mcp-tools", description: "Add the MCP tools library" },
       { step: 2, title: "Create your MCP server", description: "Set up an McpServer and register your business tools" },
       { step: 3, title: "Add BranderUX", description: "Call registerBranderTools(server, config) — one line, done" },
-      { step: 4, title: "Configure environment", description: "Set BRANDER_PROJECT_ID and BRANDER_BETA_KEY env vars" },
+      { step: 4, title: "Configure environment", description: "Set BRANDER_PROJECT_ID and BRANDER_API_KEY env vars" },
     ],
     codeExample: [
       'import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";',
@@ -98,7 +98,7 @@ export const INTEGRATION_METHODS: IntegrationMethod[] = [
       "// One line adds branded UI rendering for 15 element types",
       "await registerBranderTools(server, {",
       "  projectId: process.env.BRANDER_PROJECT_ID!,",
-      "  betaKey: process.env.BRANDER_BETA_KEY!,",
+      "  apiKey: process.env.BRANDER_API_KEY!,",
       "});",
     ].join("\n"),
     features: [
@@ -123,7 +123,7 @@ export const INTEGRATION_METHODS: IntegrationMethod[] = [
       '      "args": ["/path/to/dist/index.js"],',
       '      "env": {',
       '        "BRANDER_PROJECT_ID": "your_project_id",',
-      '        "BRANDER_BETA_KEY": "bux_dp_your_key"',
+      '        "BRANDER_API_KEY": "bux_pk_your_key"',
       "      }",
       "    }",
       "  }",
