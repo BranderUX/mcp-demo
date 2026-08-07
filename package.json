@@ -25,7 +25,7 @@
     "publish:public": "npm login && tsc && npm publish --access public"
   },
   "dependencies": {
-    "@brander/mcp-tools": "^0.3.0",
+    "@brander/mcp-tools": "^0.3.1",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^4.3.6"
   },
